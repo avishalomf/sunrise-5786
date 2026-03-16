@@ -2,7 +2,7 @@
   "name": "זריחה תשפ״ו",
   "short_name": "זריחה",
   "description": "לוח זמני זריחה תשפ״ו — צלותיה דאברהם",
-  "start_url": "/sunrise-5786/",
+  "start_url": "/sunrise-5786/index.html"
   "scope": "/sunrise-5786/",
   "display": "fullscreen",
   "background_color": "#07080f",
