@@ -1,14 +1,14 @@
-const CACHE = 'sunrise-v29';
+const CACHE = 'sunrise-v32';
 const BASE = '/sunrise-5786';
 const FILES = [BASE+'/', BASE+'/index.html', BASE+'/manifest.json', BASE+'/icon.svg'];
-
+ 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(c => c.addAll(FILES))
   );
   self.skipWaiting();
 });
-
+ 
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
@@ -17,9 +17,10 @@ self.addEventListener('activate', e => {
   );
   self.clients.claim();
 });
-
+ 
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match(BASE+'/index.html')))
   );
 });
+ 
